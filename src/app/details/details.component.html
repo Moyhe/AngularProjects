@@ -1,0 +1,26 @@
+
+
+<div class="uk-padding">
+    <div class="uk-card uk-card-default uk-padding">
+    <div class="uk-card-header">
+        <div class="uk-grid-small uk-flex-middle" uk-grid>
+            <div class="uk-width-auto">
+                <img class="uk-border-circle" width="80" height="100" src="assets/images/avatar.png">
+            </div>
+            <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">Name: {{user.fName}}</h3>
+                <p class="uk-text-meta uk-margin-remove-top"><time datetime="2016-04-01T19:00">Email:{{user.email}}</time></p>
+            </div>
+        </div>
+    </div>
+    <div class="uk-card-body">
+        <p>Comments: {{user.notes}}.</p>
+    </div>
+    <div class="uk-card-footer">
+        <p>province: {{user.province}}</p>
+        <p>phone: {{user.phone}}</p>
+        <p>skill : {{user.skill}}</p>
+        <p>price: {{user.price}}</p>
+    </div>
+</div>
+</div>

@@ -1,0 +1,45 @@
+
+<div class="uk-padding">
+
+    <div class="uk-card uk-card-default uk-card-body">
+        <h3 class="uk-card-title">add your skills</h3>
+    
+    <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+            <input class="uk-input"  type="text" placeholder="your full name" 
+            name="fName" [(ngModel)]="user.fName">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="your phone number" 
+            name="phone" [(ngModel)]="user.phone">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="your skills"
+            name="skill" [(ngModel)]="user.skill">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="province"
+            name="province" [(ngModel)]="user.province">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="price"
+            name="price" [(ngModel)]="user.price">
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Notes"
+            name="notes" [(ngModel)]="user.notes"></textarea>
+        </div>
+        
+        <div class="uk-margin">
+            <button class="uk-button uk-button-primary" (click)="insertSkill()">Submit</button>
+        </div>
+
+    </fieldset>
+
+</div>
+</div>

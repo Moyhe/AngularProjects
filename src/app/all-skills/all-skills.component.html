@@ -1,0 +1,104 @@
+
+
+<div class=" uk-padding">
+    <table class="uk-table uk-table-striped">
+        <thead>
+            <tr>
+                <th>$key</th>
+                <th>fName</th>
+                <th>skill</th>
+                <th>province</th>
+                <th>price</th>
+                <th>phone</th>
+
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of itemArray">
+              
+                <td>{{item.$key}}</td>
+                <td>{{item.fName}}</td>
+                <td>{{item.skill}}</td>
+                <td>{{item.province}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.phone}}</td>
+
+         <td> <button class="uk-button uk-button-default uk-margin-small-right"
+                (click)="moreInfo(item.$key)" type="button">Details</button></td>
+          
+ <!-- <td><button class="uk-button uk-button-default uk-margin-small-right"
+    (click)="editForm(item.$key)" type="button" uk-toggle="target: #modal-example">Edit</button>
+                </td>
+   <td><button class="uk-button uk-button-danger" (click)="onDelete(item.$key)">Delete</button></td> -->
+            
+            <!-- This is a button toggling the modal -->
+
+
+<!-- This is the modal -->
+<!-- <div id="modal-example" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">           
+    <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+            <input class="uk-input"  type="text" placeholder="your full name" 
+            name="fName" [(ngModel)]="user.fName">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="your phone number" 
+            name="phone" [(ngModel)]="user.phone">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="your skills"
+            name="skill" [(ngModel)]="user.skill">
+        </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="province"
+            name="province" [(ngModel)]="user.province">
+        </div>
+
+        <div class="uk-margin">
+            <input class="uk-input" type="text" placeholder="price"
+            name="price" [(ngModel)]="user.price">
+        </div>
+
+        <div class="uk-margin">
+            <textarea class="uk-textarea" rows="5" placeholder="Notes"
+            name="notes" [(ngModel)]="user.notes"></textarea>
+        </div>
+
+    </fieldset>
+
+        <p class="uk-text-right">
+            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+            <button class="uk-button uk-button-primary" type="button"
+            (click)="onEdit(item.$key)">
+            Save</button>
+    
+        </p>
+    </div>
+</div>          -->
+       </tr>
+           
+        </tbody>
+    </table>  
+</div>
+
+<!-- 
+<div class="uk-child-width-1-2@m uk-padding" uk-grid>
+    <div>
+        <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+                <img src="assets/images/1.jpg" alt="loading">
+            </div>
+            <div class="uk-card-body">
+                <h3 class="uk-card-title">Media Top</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+            </div>
+        </div>
+    </div>
+  
+</div> -->
+
