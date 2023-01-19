@@ -10,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class MySkillsComponent implements OnInit {
 
-
-
   user = {
     fName : '',
     phone : '',
@@ -22,12 +20,12 @@ export class MySkillsComponent implements OnInit {
 }
 
 myUid:any;
-
+isLoggedIn:boolean = false;
 
 editForm($key:any) {
 
   for (let value of this.itemArray) {
-    
+
     if (value['$key'] == $key) {
       console.log(value['$key']);
       this.user.fName = value['fName'];
@@ -36,7 +34,7 @@ editForm($key:any) {
       this.user.province = value['province'];
       this.user.price = value['price'],
       this.user.notes = value['notes'];
-  
+
     }
   }
 }
@@ -45,7 +43,7 @@ editForm($key:any) {
 
   itemArray:any[] = [];
 
-  constructor(public db:AngularFireDatabase, public route:Router) { 
+  constructor(public db:AngularFireDatabase, public route:Router) {
 
     this.itemList = db.list('skills');
      this.itemList.snapshotChanges().subscribe(actions=>{
@@ -59,17 +57,20 @@ editForm($key:any) {
 
 
    this.myUid = localStorage.getItem('uid');
-   console.log(this.itemArray);
+  //  console.log(this.itemArray);
+
+
+
 
   }
 
   onEdit($key:any) {
 
  // console.log("Editing");
-  
+
   this.itemList.set($key, {
 
-    
+
     fName : this.user.fName,
     phone : this.user.phone,
     skill : this.user.skill,
@@ -80,9 +81,11 @@ editForm($key:any) {
   });
 
   this.itemArray = [];
-  
 
-  // console.log("key :" + $key, " fName :" + this.user.fName, " phone :" 
+
+
+
+  // console.log("key :" + $key, " fName :" + this.user.fName, " phone :"
   // + this.user.phone, " skill :" + this.user.skill, " province : " + this.user.province, " price : "
   //  + this.user.price, " notes : " + this.user.notes);
 
@@ -90,7 +93,7 @@ editForm($key:any) {
 
   onDelete($key:any) {
 
-console.log("Deleting");
+// console.log("Deleting");
 
 this.itemList.remove($key);
 this.itemArray = [];
@@ -102,7 +105,7 @@ this.itemArray = [];
 
 }
 
- class ListItemClass {
+class ListItemClass {
 
   $key:string = '';
   fName : string = '';

@@ -10,24 +10,24 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   person : any = {
-    
+
     email: '',
     password:''
- 
+
 }
 
 async myRegister(email:string, password:string) {
 
   await this.fire.createUserWithEmailAndPassword(email, password).then(user=> {
-    console.log(email, password);
+    // console.log(email, password);
     this.route.navigate(['home']);
   }).catch(error=>{
     console.error(error);
-  
+
   });
 
   }
-  
+
   constructor(private fire:AngularFireAuth, private route:Router) { }
 
   ngOnInit(): void {

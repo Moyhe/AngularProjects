@@ -5,7 +5,6 @@ import {  getAuth, onAuthStateChanged } from "firebase/auth";
 import { Router } from '@angular/router'
 import * as firebase from "firebase/app";
 
- 
 
 
 @Component({
@@ -15,23 +14,21 @@ import * as firebase from "firebase/app";
 })
 export class NavbarComponent implements OnInit {
 
-
-
- //  user: Observable<firebase.User> | undefined; 
+ //  user: Observable<firebase.User> | undefined;
   isLoggedIn:boolean = false;
   private email:string | undefined;
 
   constructor(public AuthUser:AngularFireAuth, public route:Router) {
 
         let status = localStorage.getItem('isLoggedIn');
-            console.log(status);
-        
+            // console.log(status);
+
     if (status === 'true') {
       this.isLoggedIn = true;
     }else {
       this.isLoggedIn = false;
     }
-      
+
   //  this.user = AuthUser.authState;
 // const auth = getAuth();
 
@@ -41,7 +38,7 @@ export class NavbarComponent implements OnInit {
 //     this.isLoggedIn = true;
          //   const uid = user.uid;
        //       console.log(uid);
-              
+
 //   } else {
 //     this.isLoggedIn = false;
 //   }

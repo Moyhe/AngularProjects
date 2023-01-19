@@ -4,78 +4,82 @@
         <div class="uk-card-header">
             <div class="uk-grid-small uk-flex-middle" uk-grid>
                 <div class="uk-width-auto">
-                    <img class="uk-border-circle" width="200" height="250" src={{data.images}}>
+                    <img class="uk-border-circle" width="200" height="250" src={{person.images}}>
                     <br><br>
-<input type="file" (change)="upload($event)" 
-accept=".jpg, .png" class="uk-button uk-button-default" > 
-                   
+<input type="file" (change)="upload($event)"
+accept=".jpg, .png, .jpeg" class="uk-button uk-button-default">
+
                 </div>
                 <div class="uk-width-expand">
                     <h3 class="uk-card-title uk-margin-remove-bottom">Email: {{email}}</h3>
-                                  
+
                  </div>
             </div>
         </div>
         <div class="uk-card-body">
-            <p>Name: {{data.fName}}</p>
-            <p>phone: {{data.phone}}</p>
-            <p>City: {{data.city}}</p>
-            <p>address: {{data.address}}</p>
-            <p>Job: {{data.job}}</p>
-            <p>Age: {{data.age}}</p>
+            <p>Name: {{person.fName}}</p>
+            <p>phone: {{person.phone}}</p>
+            <p>City: {{person.city}}</p>
+            <p>address: {{person.address}}</p>
+            <p>Job: {{person.job}}</p>
+            <p>Age: {{person.age}}</p>
         </div>
         <div class="uk-card-footer">
-          
-            <a href="#" class="uk-button uk-button-text" uk-toggle="target: #modal-example" 
-            >Edit</a>
-    
+
+            <a href="#" class="uk-button uk-button-secondary" uk-toggle="target: #modal-example">Complete Info</a>
+
                         <!-- This is a button toggling the modal -->
-              
+
             <!-- This is the modal -->
             <div id="modal-example" uk-modal>
-                <div class="uk-modal-dialog uk-modal-body">           
+                <div class="uk-modal-dialog uk-modal-body">
                 <fieldset class="uk-fieldset">
-            
+
                     <div class="uk-margin">
-                        <input class="uk-input"  type="text" placeholder="your full name" 
-                        name="fName" [(ngModel)]="data.fName">
+                        <input class="uk-input"  type="text" placeholder="your full name"
+                        name="fName" [(ngModel)]="person.fName">
                     </div>
-            
+
                     <div class="uk-margin">
-                        <input class="uk-input" type="text" placeholder="your phone number" 
-                        name="phone" [(ngModel)]="data.phone">
+                        <input class="uk-input" type="text" placeholder="your phone number"
+                        name="phone" [(ngModel)]="person.phone">
                     </div>
-            
+
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="your age"
-                        name="age" [(ngModel)]="data.age">
+                        name="age" [(ngModel)]="person.age">
                     </div>
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="address"
-                        name="address" [(ngModel)]="data.address">
+                        name="address" [(ngModel)]="person.address">
                     </div>
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="city"
-                        name="city" [(ngModel)]="data.city">
+                        name="city" [(ngModel)]="person.city">
                     </div>
-            
+
                     <div class="uk-margin">
                         <input class="uk-input" type="text" placeholder="job"
-                        name="job" [(ngModel)]="data.job">
+                        name="job" [(ngModel)]="person.job">
                     </div>
-            
+
                 </fieldset>
-            
+
                     <p class="uk-text-right">
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                        <button class="uk-button uk-button-primary" type="button"
+                        <button class="uk-button uk-button-danger uk-modal-close" type="button">Cancel</button>
+                        <button class="uk-button uk-button-secondary uk-margin-left" type="button"
                         (click)="onEdit()">
+                        update</button>
+
+                        <button class="uk-button uk-button-secondary uk-margin-left" type="button"
+                        (click)="insertProfile()">
                         Save</button>
-                
+
                     </p>
+
                 </div>
-            </div>         
-          
+            </div>
+
         </div>
     </div>
     <!-- </div> -->

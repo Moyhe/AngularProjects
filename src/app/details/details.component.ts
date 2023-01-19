@@ -11,7 +11,7 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/datab
 export class DetailsComponent implements OnInit {
 
 
-ID:any; 
+ID:any;
 itemList: AngularFireList<any> ;
 itemArray:any[] = [];
 
@@ -26,11 +26,11 @@ user = {
 }
 
   constructor(private route:ActivatedRoute, public db:AngularFireDatabase) {
-         
+
          this.route.params.subscribe(params =>{
 
           this.ID = params
-         
+
          });
 
     this.itemList = db.list('skills');
@@ -50,26 +50,26 @@ user = {
         this.user.notes = this.itemArray[0]['notes']
         this.user.email = this.itemArray[0]['email']
 
-        console.log(this.itemArray[0]['province']);
+        // console.log(this.itemArray[0]['province']);
 
        }
-     
+
      })
    })
 
 
 //  this.myUid = localStorage.getItem('uid');
-  console.log(this.itemArray);
+  // console.log(this.itemArray);
 
 
-         
+
    }
 
   ngOnInit(): void {
 
-    console.log("ID: " ,this.ID['id']);
-    console.log("User: ", this.user);
-    
+    // console.log("ID: " ,this.ID['id']);
+    // console.log("User: ", this.user);
+
   }
 
 }

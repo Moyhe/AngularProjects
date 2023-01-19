@@ -25,16 +25,16 @@ export class AllSkillsComponent implements OnInit {
 editForm($key:any) {
 
   for (let value of this.itemArray) {
-    
+
     if (value['$key'] == $key) {
-      console.log(value['$key']);
+      // console.log(value['$key']);
       this.user.fName = value['fName'];
       this.user.phone = value['phone'];
       this.user.skill = value['skill'];
       this.user.province = value['province'];
       this.user.price = value['price'],
       this.user.notes = value['notes'];
-  
+
     }
   }
 }
@@ -43,7 +43,7 @@ editForm($key:any) {
 itemList: AngularFireList<any>;
 
   itemArray:any[] = [];
- 
+
   constructor(public db:AngularFireDatabase, public route:Router, public router:ActivatedRoute) {
 
 
@@ -58,9 +58,9 @@ itemList: AngularFireList<any>;
    })
 
 
- 
 
-console.log(this.itemArray);
+
+// console.log(this.itemArray);
 
 
    }
@@ -69,34 +69,34 @@ console.log(this.itemArray);
    onEdit($key:any) {
 
     // console.log("Editing");
-     
+
      this.itemList.set($key, {
-   
-       
+
+
        fName : this.user.fName,
        phone : this.user.phone,
        skill : this.user.skill,
        province : this.user.province,
        price : this.user.price,
        notes : this.user.notes
-   
+
      });
-   
+
      this.itemArray = [];
-     
-   
-     // console.log("key :" + $key, " fName :" + this.user.fName, " phone :" 
+
+
+     // console.log("key :" + $key, " fName :" + this.user.fName, " phone :"
      // + this.user.phone, " skill :" + this.user.skill, " province : " + this.user.province, " price : "
      //  + this.user.price, " notes : " + this.user.notes);
-   
+
      }
 
      moreInfo(key:any) {
 
 
-      console.log(key);
+      // console.log(key);
       this.route.navigate(['details/' + key]);
-      
+
 
      }
 
@@ -106,7 +106,7 @@ console.log(this.itemArray);
 
 this.itemList.remove($key);
 this.itemArray = [];
-      
+
         }
 
   ngOnInit(): void {

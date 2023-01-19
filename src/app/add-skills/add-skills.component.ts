@@ -14,7 +14,7 @@ export class AddSkillsComponent implements OnInit {
 
 
   itemList: AngularFireList<any>;
- 
+
 user = {
     fName : '',
     phone : '',
@@ -23,7 +23,6 @@ user = {
     price : '',
     notes : ''
 
- 
 }
 
 
@@ -51,44 +50,44 @@ insertSkill() {
 }
 
 
-  constructor(private fire:AngularFireAuth,public db:AngularFireDatabase, public route:Router) { 
+  constructor(private fire:AngularFireAuth,public db:AngularFireDatabase, public route:Router) {
 
       this.itemList = db.list('skills');
 
-          
+
    }
 
   ngOnInit(): void {
 
-   
+
      let person = localStorage.getItem('email');
-   
+
       // const auth = getAuth();
       // const users = auth.currentUser?.email;
       // console.log(users);
-      
+
     //let persons = this.fire.currentUser;
      this.email = person
-     console.log(person);
+    //  console.log(person);
 
     this.uid = localStorage.getItem('uid');
-     console.log(this.uid);
-     
+    //  console.log(this.uid);
+
 
 
     //  this.fire.authState.subscribe(auth=>{
     //    if (auth) {
     //      this.uid = auth.uid;
     //      console.log("UID :" ,this.uid);
-         
+
     //    }else return;
     //  })
 
 
 
-     console.log('---------------------------');
-     console.log(this.user);
-    
+    //  console.log('---------------------------');
+    //  console.log(this.user);
+
   }
 
 

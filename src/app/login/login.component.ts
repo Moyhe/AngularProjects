@@ -10,15 +10,13 @@ import { getAuth } from 'firebase/auth';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fire:AngularFireAuth, private route:Router) { 
+  constructor(private fire:AngularFireAuth, private route:Router) { }
 
-
-  }
   person : any = {
-    
+
     email: '',
     password:''
- 
+
 }
 
 uid:any;
@@ -29,24 +27,24 @@ uid:any;
     const auth:any = getAuth();
 
   await this.fire.signInWithEmailAndPassword(email, password).then(user=> {
-    console.log(email, password);
+    // console.log(email, password);
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('email', auth.currentUser?.email);
 
     this.fire.authState.subscribe((auth)=>{
       if (auth) {
        localStorage.setItem('uid', auth.uid);
-        
+
       }else return;
     })
     this.route.navigate(['my-skills']);
   }).catch(error=>{
     console.error(error);
-  
+
   });
 
   }
-  
+
   ngOnInit(): void {
   }
 

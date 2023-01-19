@@ -1,12 +1,11 @@
 
-
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
             <li class=""><a href="#" routerLink="/">craft</a></li>
-          
+
             <li><a href="#" routerLink="/all-skills">skills</a></li>
-            <li><a href="#" routerLink="/my-skills">my skill</a></li>
+            <li  *ngIf="isLoggedIn"><a href="#" routerLink="/my-skills">my skill</a></li>
             <li  *ngIf="!isLoggedIn"><a href="#" routerLink="/register">Sing Up</a></li>
             <li  *ngIf="!isLoggedIn"><a href="#" routerLink="/login">LogIn</a></li>
         </ul>
@@ -17,7 +16,7 @@
                 <a href="#" *ngIf="isLoggedIn">Profile</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
-                       
+
                         <li><a href="#" routerLink="/add-skills">Add</a></li>
                         <li><a href="#" routerLink="/user-profile">userProfile</a></li>
                         <li><a href="#" (click)="logOut()">Log Out</a></li>
