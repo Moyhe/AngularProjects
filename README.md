@@ -1,6 +1,6 @@
 # Profession
 
-with angular, UiKit framework, firebase
+it was built with angular, UIkit framework and firebase
 
 This project is made for people who have professions and want to display their information and work to the public.
 
